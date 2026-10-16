@@ -99,12 +99,6 @@ export const sites = [
     text: 'Real-time particle simulation on HTML5 Canvas: click and drag to spawn particles, then tune gravity, bounce and spawn rate.',
     kind: 'Interactive demo',
   },
-  {
-    name: 'PAGRAGO',
-    url: 'https://pagrago.vercel.app',
-    text: 'Company site for a distributor of video management software and AI-assisted CCTV theft detection.',
-    kind: 'Client website',
-  },
 ];
 
 // Production work at TelOne, grouped by area. Described, not linked: the code belongs to my employer.
