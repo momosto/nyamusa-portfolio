@@ -392,3 +392,13 @@ h3 { font-size: 21px; font-weight: 700; line-height: 1.25; }
 
 .site-name { font-family: var(--display); font-weight: 700; font-size: 18px; }
 .site-repo { display: inline-block; margin-top: 8px; font-size: 15px; font-weight: 600; }
+
+.system-group + .system-group { margin-top: 44px; }
+
+.system-area {
+  font: 600 13px/1.4 var(--mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}

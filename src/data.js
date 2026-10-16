@@ -89,42 +89,117 @@ export const sites = [
   },
 ];
 
-// Production work at TelOne. Described, not linked: the code belongs to my employer.
+// Production work at TelOne, grouped by area. Described, not linked: the code belongs to my employer.
 export const workSystems = [
   {
-    name: 'TelOne Payment Gateway',
-    stack: 'C#, .NET 6, SQL Server, EcoCash and TelPay APIs',
-    text: 'The payment engine behind mobile money collections. Background jobs chase pending payments and reconcile every status, so a customer who pays is always credited.',
+    area: 'Payments and merchants',
+    items: [
+      {
+        name: 'TelOne Payment Gateway (TOPG)',
+        stack: 'C#, .NET 6, SQL Server, EcoCash, OneMoney and TelPay APIs',
+        text: 'Designed and built the core mobile money platform. Background jobs chase pending payments and reconcile every status, so a customer who pays is always credited.',
+      },
+      {
+        name: 'Online Merchant Integration (TOMI)',
+        stack: 'ASP.NET MVC, SQL Server, LDAP',
+        text: 'The platform prepaid merchants use to sell data and voice vouchers. Closed a race condition that let simultaneous purchases slip past balance checks, using semaphore locking proven under load.',
+      },
+      {
+        name: 'Merchant Promotion and Prize-Draw Tool',
+        stack: 'ASP.NET, SQL Server, LDAP',
+        text: 'Reusable multi-merchant promotion engine that draws winners from TOMI transaction data, with LDAP staff login.',
+      },
+      {
+        name: 'Electronic Voucher Distribution',
+        stack: 'ASP.NET, SQL Server',
+        text: 'Upgrades to the system that distributes prepaid electronic vouchers to the sales channel.',
+      },
+      {
+        name: 'Self-Service Kiosks',
+        stack: 'ASP.NET MVC, Angular, payment integration',
+        text: 'Touchscreen kiosks where customers buy and activate data plans on their own, with secure payment and instant activation.',
+      },
+    ],
   },
   {
-    name: 'Online Merchant Integration',
-    stack: 'ASP.NET MVC, SQL Server, LDAP',
-    text: 'Found and closed a race condition where simultaneous voucher purchases could slip past balance checks, then proved the fix under concurrent load.',
+    area: 'Messaging and loyalty',
+    items: [
+      {
+        name: 'SMS Queue API and Scheduler',
+        stack: '.NET 8 (from .NET Framework 4.6.1), Infobip',
+        text: 'Rebuilt the legacy messaging service as a queue-based SMS backbone, with a scheduler for timed campaigns and reminders.',
+      },
+      {
+        name: 'SMS API Admin Portal',
+        stack: 'Web front end, REST APIs',
+        text: 'Admin dashboard for the SMS gateway: manage API clients, send messages and track delivery.',
+      },
+      {
+        name: 'WhatsApp and SMS Notification Gateway',
+        stack: 'Gikko (Infobip partner), REST APIs',
+        text: 'Integrated a second notification channel for SMS and WhatsApp, and wrote the WhatsApp Business API business case that went to management.',
+      },
+      {
+        name: 'HVC Loyalty Points Service',
+        stack: '.NET 8 worker service, SQL Server',
+        text: 'Spots each high-value subscriber’s first recharge of the month, awards points and sends an SMS. Index and key redesign kept it fast at volume.',
+      },
+    ],
   },
   {
-    name: 'SMS Queue API and Scheduler',
-    stack: '.NET 8, Infobip',
-    text: 'Rebuilt a legacy .NET Framework messaging service as a queue-based SMS backbone, with a scheduler for timed campaigns and reminders.',
+    area: 'Customer and staff platforms',
+    items: [
+      {
+        name: 'Support Portal and XGPON Rollout',
+        stack: 'Alpine.js, HTMX, Tailwind CSS, .NET, SQL Server',
+        text: 'One place for the support desk to work. Delivered XGPON fibre package management across billing, sales and self-service, and surfaced loyalty statistics for agents.',
+      },
+      {
+        name: 'Contract Lifecycle Management',
+        stack: 'Java 17, Spring Boot, PostgreSQL, React',
+        text: 'Four-person team, 161 endpoints. I built the LDAP/JWT login, role-based access across 20 controllers, DOCX/PDF document generation, and screens and approval forms.',
+      },
+      {
+        name: 'Casual Workers Recruitment System',
+        stack: 'Python, Django, Docker, Linux',
+        text: 'Built from scratch to take casual hiring online: public application forms, validation, and staff screens for reviewing and shortlisting applicants.',
+      },
+      {
+        name: 'Digital Shop Admin',
+        stack: 'Web front end, REST APIs',
+        text: 'Back office for the online shop, where staff manage products, orders and customers.',
+      },
+      {
+        name: 'Billing and CRM Integration',
+        stack: 'C#, .NET, REST APIs',
+        text: 'Connected legacy billing to the CRM through REST APIs for 500,000+ subscribers at 99.5% data accuracy, replacing manual reconciliation.',
+      },
+    ],
   },
   {
-    name: 'HVC Loyalty Points Service',
-    stack: '.NET 8 worker service, SQL Server',
-    text: 'Spots each high-value subscriber’s first recharge of the month, awards points and sends an SMS. Index and key redesign kept it fast at volume.',
-  },
-  {
-    name: 'Contract Lifecycle Management',
-    stack: 'Java 17, Spring Boot, PostgreSQL, React',
-    text: 'Backend developer on a four-person team building a 161-endpoint platform: LDAP/JWT login, role-based access across 20 controllers, and DOCX/PDF document generation.',
-  },
-  {
-    name: 'VoIP Fraud Management System',
-    stack: 'Spring Boot, React, CDR analytics',
-    text: 'Designed detection for IRSF, Wangiri, traffic pumping and SIM box fraud: a CDR collector and rules engine with the IMS as enforcement point.',
-  },
-  {
-    name: 'Call Centre Platform',
-    stack: 'FreePBX, QueueMetrics, k3s on Hyper-V',
-    text: 'Integrated reporting for a 96-agent call centre and stood up the Kubernetes cluster its supporting services run on.',
+    area: 'Platform, security and fraud',
+    items: [
+      {
+        name: 'Call Centre Platform on Kubernetes',
+        stack: 'FreePBX, QueueMetrics, k3s on Hyper-V',
+        text: 'Integrated reporting for a 96-agent call centre and stood up the Kubernetes cluster its supporting services run on.',
+      },
+      {
+        name: 'Security Hardening Programme',
+        stack: 'Nessus, IIS, Apache Tomcat, SSL/TLS',
+        text: 'Led remediation of Nessus findings across production servers: weak SSL/TLS, jQuery XSS exposures and outdated Tomcat components.',
+      },
+      {
+        name: 'VoIP Fraud Management System',
+        stack: 'Spring Boot, React, CDR analytics',
+        text: 'Designed detection for IRSF, Wangiri, traffic pumping and SIM box fraud: a CDR collector and rules engine with the IMS as enforcement point.',
+      },
+      {
+        name: 'AI Virtual Care Centre',
+        stack: 'Concept paper, Exco presentation',
+        text: 'Proposal for AI-first customer care that handles routine queries and hands over to human agents.',
+      },
+    ],
   },
 ];
 

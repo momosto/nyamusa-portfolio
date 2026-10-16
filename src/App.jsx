@@ -71,14 +71,19 @@ export default function App() {
           title="Systems I run at TelOne"
           intro="Production work for 500,000+ subscribers. The code belongs to my employer, so these are described rather than linked."
         >
-          <dl className="systems">
-            {workSystems.map((s) => (
-              <div key={s.name} className="system">
-                <dt>{s.name}<span className="system-stack">{s.stack}</span></dt>
-                <dd>{s.text}</dd>
-              </div>
-            ))}
-          </dl>
+          {workSystems.map((g) => (
+            <div key={g.area} className="system-group">
+              <h3 className="system-area">{g.area}</h3>
+              <dl className="systems">
+                {g.items.map((s) => (
+                  <div key={s.name} className="system">
+                    <dt>{s.name}<span className="system-stack">{s.stack}</span></dt>
+                    <dd>{s.text}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          ))}
         </Section>
 
         <Section id="experience" title="Experience">
