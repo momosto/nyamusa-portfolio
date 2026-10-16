@@ -22,8 +22,8 @@ export const projects = [
     demo: 'https://telco-rag-assistant.vercel.app',
     status: 'code',
     pitch:
-      'AI support agent that answers customer questions from a telecom provider’s own documents and cites the passage behind every answer. Says “I don’t know” when the documents don’t cover it, and is scored on a 20-question evaluation.',
-    stack: ['Python', 'FastAPI', 'Claude API', 'BM25', 'Evals'],
+      'Self-contained support assistant for a telecom: hybrid keyword and embedding search finds the right policy section, and a local question-answering model highlights the answer, with the source shown. No external AI API; both models run on CPU inside the app.',
+    stack: ['Python', 'FastAPI', 'ONNX Runtime', 'Embeddings', 'BM25', 'Evals'],
   },
   {
     name: 'InsureHub',
