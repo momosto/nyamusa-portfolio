@@ -29,3 +29,13 @@ describe('portfolio', () => {
     expect(document.querySelector('.lcd-input').textContent).toBe('3');
   });
 });
+
+describe('live sites', () => {
+  it('links each live site', async () => {
+    const { sites } = await import('./data.js');
+    render(<App />);
+    for (const s of sites) {
+      expect(screen.getByRole('link', { name: s.name })).toHaveAttribute('href', s.url);
+    }
+  });
+});

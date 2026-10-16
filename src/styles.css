@@ -368,3 +368,27 @@ h3 { font-size: 21px; font-weight: 700; line-height: 1.25; }
 @media (prefers-reduced-motion: reduce) {
   .lcd-cursor { animation: none; }
 }
+
+/* Live sites */
+.sites-title { margin: 56px 0 18px; }
+
+.sites {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0 48px;
+}
+
+.sites li { padding: 18px 0; border-top: 1px solid var(--rule); }
+.sites p { margin: 6px 0 0; }
+
+.site-kind {
+  margin: 0 0 4px !important;
+  font: 500 12px/1.4 var(--mono);
+  color: var(--muted);
+}
+
+.site-name { font-family: var(--display); font-weight: 700; font-size: 18px; }
+.site-repo { display: inline-block; margin-top: 8px; font-size: 15px; font-weight: 600; }

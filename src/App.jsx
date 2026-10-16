@@ -1,5 +1,5 @@
 import Phone from './Phone.jsx';
-import { profile, projects, workSystems, experience, skills, education } from './data.js';
+import { profile, projects, sites, workSystems, experience, skills, education } from './data.js';
 
 function Section({ id, title, intro, children }) {
   return (
@@ -49,6 +49,18 @@ export default function App() {
                   <a href={p.repo}>Read the code</a>
                   {p.demo && <a href={p.demo}>Open the live demo</a>}
                 </p>
+              </li>
+            ))}
+          </ul>
+
+          <h3 className="sub sites-title">Live on the web</h3>
+          <ul className="sites">
+            {sites.map((s) => (
+              <li key={s.name}>
+                <p className="site-kind">{s.kind}</p>
+                <a className="site-name" href={s.url}>{s.name}</a>
+                <p>{s.text}</p>
+                {s.repo && <a className="site-repo" href={s.repo}>Read the code</a>}
               </li>
             ))}
           </ul>

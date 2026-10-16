@@ -21,7 +21,7 @@ export const projects = [
     repo: gh('insurehub'),
     status: 'code',
     pitch:
-      'Full-stack insurance platform for motor, funeral and home cover in USD and ZiG: rating engines, quote-to-policy, EcoCash premium collection, automatic lapse and reinstatement, and an audited claims workflow.',
+      'Insurer core system for motor, funeral and home cover in USD and ZiG: rating engines, quote-to-policy, EcoCash premium collection, a claims state machine with full audit trail, JWT and role-based access, and 31 automated tests.',
     stack: ['ASP.NET Core 8', 'EF Core', 'React', 'TypeScript', 'xUnit'],
   },
   {
@@ -66,6 +66,29 @@ export const projects = [
   },
 ];
 
+// Live sites on Vercel. Front-end work and client websites.
+export const sites = [
+  {
+    name: 'Designed 4 Resilience',
+    url: 'https://designed-4-resilience.vercel.app',
+    text: 'Website for a community organisation working in youth development, gender advocacy and environmental education.',
+    kind: 'Client website',
+  },
+  {
+    name: 'Physics Sandbox',
+    url: 'https://physics-sandbox-portfolio-ubmk.vercel.app',
+    repo: gh('PhysicsSandboxPortfolio'),
+    text: 'Real-time particle simulation on HTML5 Canvas: click and drag to spawn particles, then tune gravity, bounce and spawn rate.',
+    kind: 'Interactive demo',
+  },
+  {
+    name: 'PAGRAGO',
+    url: 'https://pagrago.vercel.app',
+    text: 'Company site for a distributor of video management software and AI-assisted CCTV theft detection.',
+    kind: 'Client website',
+  },
+];
+
 // Production work at TelOne. Described, not linked: the code belongs to my employer.
 export const workSystems = [
   {
@@ -89,6 +112,11 @@ export const workSystems = [
     text: 'Spots each high-value subscriber’s first recharge of the month, awards points and sends an SMS. Index and key redesign kept it fast at volume.',
   },
   {
+    name: 'Contract Lifecycle Management',
+    stack: 'Java 17, Spring Boot, PostgreSQL, React',
+    text: 'Backend developer on a four-person team building a 161-endpoint platform: LDAP/JWT login, role-based access across 20 controllers, and DOCX/PDF document generation.',
+  },
+  {
     name: 'VoIP Fraud Management System',
     stack: 'Spring Boot, React, CDR analytics',
     text: 'Designed detection for IRSF, Wangiri, traffic pumping and SIM box fraud: a CDR collector and rules engine with the IMS as enforcement point.',
@@ -108,8 +136,9 @@ export const experience = [
     points: [
       'Own the payment and messaging back ends: payment gateway, merchant platform, SMS Queue API and loyalty service.',
       'Build web front ends in React, Alpine.js, HTMX and Tailwind CSS for contract management, support and admin portals.',
-      'Deploy through Azure DevOps CI/CD to IIS, Docker and k3s; refactoring towards microservices improved reliability by 35%.',
+      'Set up Azure DevOps CI/CD to IIS, Docker and k3s, cutting deployment time by 60%; refactoring towards microservices improved reliability by 35%.',
       'Introduced code review and unit, integration and UAT testing that reached a 95% defect detection rate; mentor junior developers.',
+      'Regularly act as Solutions Manager: sprint planning, team direction and stakeholder communication.',
     ],
   },
   {
