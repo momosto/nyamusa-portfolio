@@ -17,6 +17,15 @@ const gh = (repo) => `https://github.com/momosto/${repo}`;
 
 export const projects = [
   {
+    name: 'Telco RAG Assistant',
+    repo: gh('telco-rag-assistant'),
+    demo: 'https://telco-rag-assistant.vercel.app',
+    status: 'code',
+    pitch:
+      'AI support agent that answers customer questions from a telecom provider’s own documents and cites the passage behind every answer. Says “I don’t know” when the documents don’t cover it, and is scored on a 20-question evaluation.',
+    stack: ['Python', 'FastAPI', 'Claude API', 'BM25', 'Evals'],
+  },
+  {
     name: 'InsureHub',
     repo: gh('insurehub'),
     status: 'code',
