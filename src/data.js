@@ -26,6 +26,15 @@ export const projects = [
     stack: ['Python', 'FastAPI', 'ONNX Runtime', 'Embeddings', 'BM25', 'Evals'],
   },
   {
+    name: 'CDR Fraud Detector',
+    repo: gh('cdr-fraud-detector'),
+    demo: 'https://cdr-fraud-detector.vercel.app',
+    status: 'code',
+    pitch:
+      'Finds Wangiri, IRSF and SIM box fraud in a synthetic week of call records. Fraud rules (100% precision) plus an unlabelled Isolation Forest that catches the stealthy variants the rules miss, scored honestly against planted fraud, with a block-list API.',
+    stack: ['Python', 'pandas', 'scikit-learn', 'FastAPI', 'React', 'TypeScript'],
+  },
+  {
     name: 'InsureHub',
     repo: gh('insurehub'),
     status: 'code',
