@@ -35,6 +35,14 @@ export const projects = [
     stack: ['Python', 'pandas', 'scikit-learn', 'FastAPI', 'React', 'TypeScript'],
   },
   {
+    name: 'Mobile Money Gateway Sandbox',
+    repo: gh('mobile-money-gateway-sandbox'),
+    status: 'code',
+    pitch:
+      'A mobile money gateway that can’t charge a customer twice. 1,000 concurrent requests for 100 orders against a deliberately unreliable provider: zero double charges, and the books balance to the cent. Idempotency keys, database-level locking, signed webhooks and a reconciliation worker.',
+    stack: ['C#', '.NET 8', 'EF Core', 'PostgreSQL', 'xUnit', 'k6', 'Docker'],
+  },
+  {
     name: 'InsureHub',
     repo: gh('insurehub'),
     status: 'code',
